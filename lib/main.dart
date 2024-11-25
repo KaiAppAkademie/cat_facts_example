@@ -7,7 +7,7 @@ void main() {
   runApp(const MainApp());
 }
 
-const uriString = 'https://meowfacts.herokuapp.com/';
+const uriString = 'https://catfact.ninja/fact';
 
 Future<String> getDataFromApi() async {
   final response = await get(Uri.parse(uriString));
@@ -21,7 +21,7 @@ Future<String> getCatFact() async {
 
   final jsonObject = jsonDecode(jsonString);
 
-  final catFact = jsonObject['data'][0];
+  final catFact = jsonObject['fact'];
 
   return catFact;
 }
